@@ -1,6 +1,6 @@
 # AJ
 
-I’m AJ, a petroleum engineering student who builds software for the people doing the work. During an engineering internship, I compared field teams’ accounts of how jobs ran with forecasts and Salesforce records. Those conversations helped me decide which problems were worth automating. Across the summer, the automation tools I built saved an estimated 200 hours.
+I’m Ashleigh, a petroleum engineering student who builds software for the people doing the work. During an engineering internship, I compared field teams’ accounts of how jobs ran with forecasts and Salesforce records. Those conversations helped me decide which problems were worth automating. Across the summer, the automation tools I built saved an estimated 200 hours.
 
 My projects come from places where I know the work firsthand. Jordan Excavating gave me a reason to build a better contractor website. Student chapter leadership got me thinking about how to tell who an event actually reached. Life Board grew out of a question I kept running into myself: when school, work, and other commitments overlap, what needs my attention today?
 
