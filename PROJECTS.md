@@ -11,7 +11,7 @@ Each entry pairs the original project with a focused exercise. Run commands from
 | Daily briefing | Python · service integration · failure handling | [briefing.py](examples/briefing.py) |
 | Reusable assistant skills | Workflow design · prompt design · MCP integration | [review-skill.md](examples/review-skill.md) |
 | Engineering showcase | Next.js · TypeScript · technical communication | [decision-record.md](examples/decision-record.md) |
-| Task board | SQL · task scheduling · state modeling | [agenda.sql](examples/agenda.sql) |
+| [Life Board](#life-board) | Neon Postgres · API integration · scheduling · event history | [agenda.sql](examples/agenda.sql) |
 
 ## Jordan Excavating website
 
@@ -77,9 +77,11 @@ I built an interactive Next.js portfolio for a set of engineering projects, pair
 
 **Try the [standalone example](examples/decision-record.md).** Open examples/decision-record.md and copy the headings. The worked example explains why chapter officers benefit from database-backed events. Replace the example with a decision from your build and give it an observable acceptance check.
 
-## Task board
+## Life Board
 
-I built a Kanban board on top of the shared-memory API so a task could move from a conversation into a daily agenda. A planned work date and a deadline answer different questions. Status adds a third dimension: a task can be overdue while someone else owns the next action.
+I built Life Board so a task mentioned in a conversation can appear on a Kanban board and a daily agenda. The board and connected assistants use the same API backed by Neon Postgres. Completing a card in one place updates the record both use. An event log records each change, which makes it possible to trace how a task moved or count completions by week.
+
+The hardest design question was what belongs on today’s list. A draft due Friday can need work on Tuesday. A quote due yesterday can still be waiting on a supplier. Keeping the planned work date, deadline, and status in separate fields lets the agenda distinguish those cases. A 14-day schedule and workload heatmap use planned work to show where the week is getting crowded.
 
 **For the next build.** Store the work date, due date and status separately. Test the agenda with a completed item, a blocked item, an overdue item and an item planned for today.
 
