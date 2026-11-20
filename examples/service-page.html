@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Field services directory</title>
+<style>body{max-width:44rem;margin:8vh auto;padding:1rem;font:1.15rem/1.6 system-ui;color:#17312b;background:#faf8f1}article{border-top:1px solid #85968c}select{font:inherit}</style>
+<main><h1>Field services directory</h1><label>Service area <select id="area"></select></label><section aria-live="polite" id="services"></section></main>
+<script>
+const catalog = [
+  {area:"North district", service:"Site grading", detail:"Prepare building pads and establish drainage."},
+  {area:"South district", service:"Utility trenching", detail:"Prepare trenches for planned utility routes."}
+];
+const menu = document.querySelector("#area");
+const results = document.querySelector("#services");
+for (const area of new Set(catalog.map(item => item.area))) menu.add(new Option(area));
+function render() {
+  results.replaceChildren();
+  for (const item of catalog.filter(item => item.area === menu.value)) {
+    const article = document.createElement("article");
+    const title = document.createElement("h2");
+    const detail = document.createElement("p");
+    title.textContent = item.service;
+    detail.textContent = item.detail;
+    article.append(title, detail);
+    results.append(article);
+  }
+}
+menu.addEventListener("change", render);
+render();
+</script></html>
