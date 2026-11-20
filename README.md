@@ -10,23 +10,23 @@ A contractor’s website has to work for someone looking up a service on a phone
 
 Two small decisions made the site easier to maintain. Contact details and service areas live in one configuration file, so an edit reaches every page that uses it. A contrast check catches hard-to-read brand color combinations before they ship.
 
-[Read the case study](https://github.com/ashleigh24jordan-ops/ashleigh24jordan-ops/blob/main/PROJECTS.md#jordan-excavating-website) · [Explore the service-page starter](https://github.com/ashleigh24jordan-ops/ashleigh24jordan-ops/blob/main/examples/service-page.html) · [Try the color contrast check](https://github.com/ashleigh24jordan-ops/ashleigh24jordan-ops/blob/main/examples/contrast.py)
+[Read the case study](https://github.com/AJORDAN3/AJORDAN3/blob/main/PROJECTS.md#jordan-excavating-website) · [Explore the service-page starter](https://github.com/AJORDAN3/AJORDAN3/blob/main/examples/service-page.html) · [Try the color contrast check](https://github.com/AJORDAN3/AJORDAN3/blob/main/examples/contrast.py)
 
 ## Life Board
 
 I built a planner that turns tasks mentioned in chat into cards on a Kanban board. The board and connected assistants share a Neon Postgres database through one API. A task can be due Friday, scheduled for Tuesday, or waiting on someone else. Life Board keeps those details separate so its daily agenda shows what can actually move today.
 
-[Explore the design](https://github.com/ashleigh24jordan-ops/ashleigh24jordan-ops/blob/main/PROJECTS.md#life-board) · [Run the agenda query on fictional tasks](https://github.com/ashleigh24jordan-ops/ashleigh24jordan-ops/blob/main/examples/agenda.sql)
+[Explore the design](https://github.com/AJORDAN3/AJORDAN3/blob/main/PROJECTS.md#life-board) · [Run the agenda query on fictional tasks](https://github.com/AJORDAN3/AJORDAN3/blob/main/examples/agenda.sql)
 
 ## Engineering and student leadership
 
 | Project | Engineering decision |
 | --- | --- |
-| [Event attendance](https://github.com/ashleigh24jordan-ops/ashleigh24jordan-ops/blob/main/PROJECTS.md#event-attendance) | As a student chapter leader, I wanted to know both how many people showed up and how many distinct members we reached over a semester. |
-| [AI project handoffs](https://github.com/ashleigh24jordan-ops/ashleigh24jordan-ops/blob/main/PROJECTS.md#ai-project-handoffs) | Store decisions and next steps by project so another assistant can resume the work. |
-| [Pressure drawdown analysis](https://github.com/ashleigh24jordan-ops/ashleigh24jordan-ops/blob/main/PROJECTS.md#pressure-drawdown-analysis) | In reservoir engineering coursework, I used Python to measure how quickly well pressure fell during a drawdown test. |
+| [Event attendance](https://github.com/AJORDAN3/AJORDAN3/blob/main/PROJECTS.md#event-attendance) | As a student chapter leader, I wanted to know both how many people showed up and how many distinct members we reached over a semester. |
+| [AI project handoffs](https://github.com/AJORDAN3/AJORDAN3/blob/main/PROJECTS.md#ai-project-handoffs) | Store decisions and next steps by project so another assistant can resume the work. |
+| [Pressure drawdown analysis](https://github.com/AJORDAN3/AJORDAN3/blob/main/PROJECTS.md#pressure-drawdown-analysis) | In reservoir engineering coursework, I used Python to measure how quickly well pressure fell during a drawdown test. |
 
-[All eight project walkthroughs and reusable examples](https://github.com/ashleigh24jordan-ops/ashleigh24jordan-ops/blob/main/PROJECTS.md) · [Project log template](https://github.com/ashleigh24jordan-ops/ashleigh24jordan-ops/blob/main/PROJECT-TEMPLATE.md)
+[All eight project walkthroughs and reusable examples](https://github.com/AJORDAN3/AJORDAN3/blob/main/PROJECTS.md) · [Project log template](https://github.com/AJORDAN3/AJORDAN3/blob/main/PROJECT-TEMPLATE.md)
 
 ## How I approach engineering work
 
