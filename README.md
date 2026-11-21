@@ -4,6 +4,8 @@ I’m Ashleigh, a petroleum engineering student who builds software for the peop
 
 My projects come from places where I know the work firsthand. Jordan Excavating gave me a reason to build a better contractor website. Student chapter leadership got me thinking about how to tell who an event actually reached. Life Board grew out of a question I kept running into myself: when school, work, and other commitments overlap, what needs my attention today?
 
+[Download a blank starter for your own project](https://github.com/AJORDAN3/AJORDAN3/tree/main/templates)
+
 ## Jordan Excavating website
 
 A contractor’s website has to work for someone looking up a service on a phone at a job site. I rebuilt Jordan Excavating’s site with Next.js and TypeScript, keeping the existing service URLs so customers could still follow a saved link to commercial earthwork or septic systems.

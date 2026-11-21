@@ -1,0 +1,1 @@
+Create a public repository named exactly like your GitHub username. Copy README.md and PROJECT.md to its root. Replace bracketed prompts, add links, and preview the Markdown. Duplicate PROJECT.md for each additional case study.
