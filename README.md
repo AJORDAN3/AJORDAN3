@@ -4,15 +4,15 @@ I’m Ashleigh, a petroleum engineering student who builds software for the peop
 
 My projects come from places where I know the work firsthand. Jordan Excavating gave me a reason to build a better contractor website. Student chapter leadership got me thinking about how to tell who an event actually reached. Life Board grew out of a question I kept running into myself: when school, work, and other commitments overlap, what needs my attention today?
 
-## Open a blank template
+## Try the project demos
 
-Choose a template, fill it in, and save your own copy in the browser.
+These interactive mockups use sample data. Each demo includes a downloadable HTML copy.
 
-- [GitHub profile](https://ajordan3-templates.ashleigh24jordan.chatgpt.site/github-profile.html)
-- [Daily briefing](https://ajordan3-templates.ashleigh24jordan.chatgpt.site/personal-dashboard.html)
-- [Event attendance](https://ajordan3-templates.ashleigh24jordan.chatgpt.site/event-attendance.html)
-- [Project showcase](https://ajordan3-templates.ashleigh24jordan.chatgpt.site/project-showcase.html)
-- [Assistant toolkit](https://ajordan3-templates.ashleigh24jordan.chatgpt.site/assistant-toolkit.html)
+- [Jordan HQ](https://ajordan3-templates.ashleigh24jordan.chatgpt.site/personal-dashboard.html) — Refresh a sample morning briefing to see the forecast and cached inbox change together.
+- [Event attendance](https://ajordan3-templates.ashleigh24jordan.chatgpt.site/event-attendance.html) — Check a member into two events and see how visits and distinct people are counted.
+- [Internship showcase](https://ajordan3-templates.ashleigh24jordan.chatgpt.site/project-showcase.html) — Follow a sample project week by week, then compare the hours worked and saved.
+- [Agent007 handoff](https://ajordan3-templates.ashleigh24jordan.chatgpt.site/assistant-toolkit.html) — Play both approval gates in a simulated change request and watch the shared handoff record advance.
+- [AJ’s GitHub profile](https://ajordan3-templates.ashleigh24jordan.chatgpt.site/github-profile.html) — Browse selected work as a reviewer would. Open a case study, inspect the decision, and try its evidence.
 
 ## Jordan Excavating website
 

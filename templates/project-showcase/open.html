@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Project showcase template</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Internship showcase · Project demo</title><style>
 *{box-sizing:border-box}html{color-scheme:light}body{margin:0;background:#fbf8f2;color:#302e30;font:1rem/1.56 'DM Sans',system-ui,sans-serif}
 main,nav{width:min(72rem,calc(100% - 2.5rem));margin:auto}nav{display:flex;border-bottom:1px solid #cec6ba;align-items:center;padding:1.15rem 0}nav a{color:#473f47;font-weight:650;text-decoration:none}nav a:hover{text-decoration:underline}
 h1,h2,legend,.name{font-family:'DM Serif Text',Georgia,serif;font-weight:500}h1{font-size:clamp(2.65rem,6.2vw,5.4rem);line-height:.98;letter-spacing:-.05em;margin:0 0 1rem}h2,legend{font-size:1.65rem;line-height:1.18}p{margin:0;max-width:53ch}
@@ -15,70 +15,17 @@ textarea,select{font:inherit;display:block;margin-top:.3rem;width:100%;border:1p
 .conversation:before{inset:.7rem 1.9rem 2rem .5rem;background:var(--wash);border-radius:1.2rem}.bubble{inset:2.3rem .5rem 1rem 2.5rem;border:2px solid;background:#fffaf0;border-radius:1rem 1rem .15rem 1rem}.conversation b{bottom:2rem;right:1.1rem}
 .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:1rem;margin:1.6rem 0 3rem}.card{display:flex;flex-direction:column;align-items:start;color:var(--ink);text-decoration:none;background:#fffefa;border:1px solid #cec6ba;border-radius:1rem;overflow:hidden}.card:hover{border-color:var(--ink);box-shadow:0 3px 0 var(--ink)}.swatch{display:grid;place-items:center;width:100%;background:var(--wash);padding:.7rem}.name{font-size:1.5rem;padding:.8rem 1rem}.intro{padding:3rem 0 .45rem}.intro h1{max-width:12ch}
 @media(max-width:700px){.layout{grid-template-columns:1fr}.preview{position:static}.art{zoom:.78}header{gap:.3rem}header p{font-size:.95rem}}@media(max-width:480px){header{align-items:flex-start;flex-direction:column-reverse}.art{zoom:.68}nav,main{width:calc(100% - 1.5rem)}}
-</style></head><body style="--ink:#215e53;--wash:#d3eadc"><nav aria-label="Template collection"><a href="https://ajordan3-templates.ashleigh24jordan.chatgpt.site/">AJ’s templates</a></nav><main><header><div><h1>Project showcase</h1><p>Tell the story of each project from the first problem to the result.</p></div><span aria-hidden="true" class="art prints"><i class="mountain"></i><b>Portfolio</b></span></header><div class="layout"><form><fieldset id="header"><legend>Overview</legend></fieldset><div id="rows"></div><button type="button" id="add">Add another project</button></form><section class="preview"><h2>Preview</h2><pre id="preview"></pre><button type="button" id="save">Save a text copy</button><p class="hint">Save your copy before closing this tab.</p></section></div></main><script>const config = ["Project showcase","Tell the story of each project from the first problem to the result.",["Showcase title","Introduction"],"Project",["Project title","Problem","Decision","Result","Skills"]];
-const form = document.querySelector("form");
-const rows = document.querySelector("#rows");
-const preview = document.querySelector("#preview");
-function fields(container, labels, values = []) {
-  labels.forEach((label, i) => {
-    const wrapper = document.createElement("label");
-    wrapper.textContent = label;
-    const input = document.createElement(label === "Activity" ? "select" : "textarea");
-    if (label === "Activity") {
-      for (const activity of ["Check-in", "Volunteer signup"]) input.add(new Option(activity, activity));
-    } else input.rows = 2;
-    if (values[i]) input.value = values[i];
-    wrapper.append(input);
-    container.append(wrapper);
-  });
-}
-function addRow() {
-  const row = document.createElement("fieldset");
-  const legend = document.createElement("legend");
-  legend.textContent = config[3];
-  row.append(legend);
-  fields(row, config[4]);
-  const remove = document.createElement("button");
-  remove.type = "button";
-  remove.textContent = "Remove entry";
-  remove.onclick = () => { row.remove(); update(); };
-  row.append(remove);
-  rows.append(row);
-  return row;
-}
-function entries(group) {
-  return [...group.querySelectorAll("textarea, select")].map(input => input.value.trim());
-}
-function update() {
-  const header = entries(document.querySelector("#header"));
-  const lines = header.flatMap((v,i) => v ? [config[2][i] + ": " + v] : []);
-  const visits = new Map(), volunteers = new Map(), people = new Set();
-  for (const row of rows.children) {
-    const values = entries(row);
-    if (config[0] === "Event attendance") {
-      const [event, member, action] = values;
-      if (!event || !member) continue;
-      const key = JSON.stringify([event.toLowerCase(), member.toLowerCase()]);
-      const target = action === "Check-in" ? visits : volunteers;
-      if (target.has(key)) continue;
-      target.set(key, true);
-      if (action === "Check-in") people.add(member.toLowerCase());
-    }
-    if (values.some(Boolean)) lines.push("", ...values.flatMap((v,i) => v ? [config[4][i] + ": " + v] : []));
-  }
-  if (config[0] === "Event attendance") lines.push("", "Check-ins: "+visits.size+" · Distinct attendees: "+people.size+" · Volunteer signups: "+volunteers.size);
-  preview.textContent = lines.join("\n").trim() || "Your completed template will appear here.";
-}
-fields(document.querySelector("#header"), config[2]);
-addRow();
-document.querySelector("#add").onclick = () => { const row = addRow(); row.querySelector("textarea").focus(); update(); };
-form.oninput = update;
-document.querySelector("#save").onclick = () => {
-  const a = document.createElement("a");
-  const blob = new Blob([config[0]+"\n\n"+preview.textContent+"\n"], {type:"text/plain;charset=utf-8"});
-  const url = URL.createObjectURL(blob);
-  a.href=url; a.download=config[0].toLowerCase().replaceAll(" ","-")+".txt"; a.click();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-};
-update();</script></body></html>
 
+.columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}.panel{padding:clamp(1.1rem,3vw,2rem);border:1px solid #cfc7bb;border-radius:1rem;background:#fffefa;margin-bottom:1.2rem;min-width:0}.panel h2{margin:0 0 .8rem;color:var(--ink)}.panel h3{font-size:1rem;margin:1.3rem 0 .4rem}.panel p+p,.panel details p,.panel .bar,.panel p[role=status]{margin-top:.75rem}.bar,.strip{display:flex;align-items:center;gap:.7rem;flex-wrap:wrap}.bar{justify-content:space-between}.strip>div{padding:.7rem 1rem;background:var(--wash);border-radius:.6rem;color:var(--ink)}.strip strong,.strip small{display:block}.strip strong{font:500 1.65rem Georgia,serif}.big{font:500 3.8rem Georgia,serif;color:var(--ink)}details{padding:.9rem 0;border-bottom:1px solid #d9d1c7}summary{font-weight:650;cursor:pointer}ol{padding-left:1.2rem}li{margin:.6rem 0}a{color:var(--ink,#473f47)}.fine,footer{color:#59544f;font-size:.9rem}.tag{background:var(--wash);padding:.2rem .65rem;border-radius:1rem}.tag+p{margin:1rem 0}#projects{display:grid;gap:.55rem}button[aria-pressed=true]{background:var(--ink);color:white}footer{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:1rem 0 2.5rem;border-top:1px solid #ccc}button[hidden]{display:none}@media(max-width:700px){.columns{grid-template-columns:1fr}}
+</style></head><body style="--ink:#215e53;--wash:#d3eadc"><nav aria-label="Template collection"><a href="https://ajordan3-templates.ashleigh24jordan.chatgpt.site/">All project demos</a></nav><main><header><div><h1>Internship showcase</h1><p>Follow a sample project week by week, then compare the hours worked and saved.</p></div><span aria-hidden="true" class="art prints"><i class="mountain"></i><b>Portfolio</b></span></header><div class="columns"><section class="panel"><h2>Summer field notes</h2><div id="weeks"></div></section><section class="panel"><h2>Hours dashboard</h2><label>Reporting window<select id="window"><option value="0">All weeks</option><option value="1">Week 1</option><option value="2">Week 2</option><option value="3">Week 3</option></select></label><div id="hours" class="strip"></div><p class="fine">Illustrative hours for this sample internship.</p></section></div><footer><span>Interactive demo · Sample data</span><button id="download">Download runnable HTML</button></footer></main><script>const originalHTML = "<!doctype html>\n"+document.documentElement.outerHTML;
+const weeks=[
+ {name:"Map the workflow",work:"Shadowed a dispatcher and mapped five steps in a shift handoff.",lesson:"A process map revealed that two teams entered the same updates.",worked:24,saved:0},
+ {name:"Build the first reminder",work:"Built a scheduled reminder for outstanding shift notes.",lesson:"A reminder needs an owner and a clear next action.",worked:32,saved:3},
+ {name:"Pilot and measure",work:"Ran a pilot with a second crew and compared follow-up time.",lesson:"Measure the original workflow before estimating time saved.",worked:28,saved:6}
+];
+document.querySelector("#weeks").innerHTML=weeks.map((w,i)=>"<details"+(i?"":" open")+"><summary>Week "+(i+1)+" · "+w.name+"</summary><p>"+w.work+"</p><p><b>Lesson learned</b> · "+w.lesson+"</p></details>").join("");
+const windowSelect=document.querySelector("#window");
+function chart(){const i=Number(windowSelect.value), rows=i?[weeks[i-1]]:weeks;
+document.querySelector("#hours").innerHTML=["worked","saved"].map(k=>"<div><strong>"+rows.reduce((sum,w)=>sum+w[k],0)+" h</strong>"+(k==="worked"?"Logged":"Estimated saved")+"</div>").join("")}
+windowSelect.onchange=chart;chart();
+document.querySelector("#download").onclick=()=>{const link=document.createElement("a");const url=URL.createObjectURL(new Blob([originalHTML],{type:"text/html"}));link.href=url;link.download="project-showcase.html";link.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};</script></body></html>
