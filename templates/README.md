@@ -1,10 +1,10 @@
 # Open a blank template
 
-- [GitHub profile](https://rawcdn.githack.com/AJORDAN3/AJORDAN3/6015ae97c3cb8fcf9553a4f8ee3d76b8671bba66/templates/github-profile/open.html)
-- [Daily briefing](https://rawcdn.githack.com/AJORDAN3/AJORDAN3/6015ae97c3cb8fcf9553a4f8ee3d76b8671bba66/templates/personal-dashboard/open.html)
-- [Event attendance](https://rawcdn.githack.com/AJORDAN3/AJORDAN3/6015ae97c3cb8fcf9553a4f8ee3d76b8671bba66/templates/event-attendance/open.html)
-- [Project showcase](https://rawcdn.githack.com/AJORDAN3/AJORDAN3/6015ae97c3cb8fcf9553a4f8ee3d76b8671bba66/templates/project-showcase/open.html)
-- [Assistant toolkit](https://rawcdn.githack.com/AJORDAN3/AJORDAN3/6015ae97c3cb8fcf9553a4f8ee3d76b8671bba66/templates/assistant-toolkit/open.html)
+- [GitHub profile](https://ajordan3-templates.ashleigh24jordan.chatgpt.site/github-profile.html)
+- [Daily briefing](https://ajordan3-templates.ashleigh24jordan.chatgpt.site/personal-dashboard.html)
+- [Event attendance](https://ajordan3-templates.ashleigh24jordan.chatgpt.site/event-attendance.html)
+- [Project showcase](https://ajordan3-templates.ashleigh24jordan.chatgpt.site/project-showcase.html)
+- [Assistant toolkit](https://ajordan3-templates.ashleigh24jordan.chatgpt.site/assistant-toolkit.html)
 
 ## Download the source files
 
