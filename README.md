@@ -4,7 +4,15 @@ I’m Ashleigh, a petroleum engineering student who builds software for the peop
 
 My projects come from places where I know the work firsthand. Jordan Excavating gave me a reason to build a better contractor website. Student chapter leadership got me thinking about how to tell who an event actually reached. Life Board grew out of a question I kept running into myself: when school, work, and other commitments overlap, what needs my attention today?
 
-[Download a blank starter for your own project](https://github.com/AJORDAN3/AJORDAN3/tree/main/templates)
+## Open a blank template
+
+Choose a template, fill it in, and save your own copy in the browser.
+
+- [GitHub profile](https://rawcdn.githack.com/AJORDAN3/AJORDAN3/6015ae97c3cb8fcf9553a4f8ee3d76b8671bba66/templates/github-profile/open.html)
+- [Daily briefing](https://rawcdn.githack.com/AJORDAN3/AJORDAN3/6015ae97c3cb8fcf9553a4f8ee3d76b8671bba66/templates/personal-dashboard/open.html)
+- [Event attendance](https://rawcdn.githack.com/AJORDAN3/AJORDAN3/6015ae97c3cb8fcf9553a4f8ee3d76b8671bba66/templates/event-attendance/open.html)
+- [Project showcase](https://rawcdn.githack.com/AJORDAN3/AJORDAN3/6015ae97c3cb8fcf9553a4f8ee3d76b8671bba66/templates/project-showcase/open.html)
+- [Assistant toolkit](https://rawcdn.githack.com/AJORDAN3/AJORDAN3/6015ae97c3cb8fcf9553a4f8ee3d76b8671bba66/templates/assistant-toolkit/open.html)
 
 ## Jordan Excavating website
 

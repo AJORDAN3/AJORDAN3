@@ -1,4 +1,12 @@
-# Reusable project templates
+# Open a blank template
+
+- [GitHub profile](https://rawcdn.githack.com/AJORDAN3/AJORDAN3/6015ae97c3cb8fcf9553a4f8ee3d76b8671bba66/templates/github-profile/open.html)
+- [Daily briefing](https://rawcdn.githack.com/AJORDAN3/AJORDAN3/6015ae97c3cb8fcf9553a4f8ee3d76b8671bba66/templates/personal-dashboard/open.html)
+- [Event attendance](https://rawcdn.githack.com/AJORDAN3/AJORDAN3/6015ae97c3cb8fcf9553a4f8ee3d76b8671bba66/templates/event-attendance/open.html)
+- [Project showcase](https://rawcdn.githack.com/AJORDAN3/AJORDAN3/6015ae97c3cb8fcf9553a4f8ee3d76b8671bba66/templates/project-showcase/open.html)
+- [Assistant toolkit](https://rawcdn.githack.com/AJORDAN3/AJORDAN3/6015ae97c3cb8fcf9553a4f8ee3d76b8671bba66/templates/assistant-toolkit/open.html)
+
+## Download the source files
 
 Download one ZIP, extract it, and open its README. For the GitHub profile, start with START-HERE.md. Each download includes editable source and permission to copy, modify, and redistribute it.
 
