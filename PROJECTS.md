@@ -1,6 +1,6 @@
 # Engineering project log
 
-Each entry pairs the original project with a focused exercise. Run commands from the portfolio root with Python 3 or the SQLite CLI. The browser example opens directly from disk.
+Each entry pairs the original project with a focused exercise. Run the regression checks with `python3 -m unittest discover -s tests -v` from the repository root. Run commands from the portfolio root with Python 3 or the SQLite CLI. The browser example opens directly from disk.
 
 | Project | Skills practiced | Starter |
 | --- | --- | --- |
