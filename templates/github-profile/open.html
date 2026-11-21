@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GitHub profile template</title><style>
+*{box-sizing:border-box}body{max-width:58rem;margin:auto;padding:clamp(1rem,4vw,3rem);font:1rem/1.55 system-ui,sans-serif;color:#183735;background:#f6f8f5}h1{font:500 clamp(2.3rem,6vw,3.8rem)/1.1 Georgia,serif;margin-bottom:.4rem}fieldset,section{background:white;border:1px solid #bbc9c1;padding:1.25rem;margin:1.25rem 0;border-radius:.5rem;min-width:0}legend{font-weight:700}label{display:block;margin:.7rem 0;font-weight:600}textarea,select{display:block;width:100%;font:inherit;padding:.45rem;border:1px solid #81968a;border-radius:.25rem;resize:vertical}button{font:inherit;padding:.45rem .9rem;color:#fff;background:#215c4f;border:0;border-radius:.3rem;cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit}h2{margin-top:0}</style></head><body><main><h1>GitHub profile</h1><p>Build a short introduction and a project entry for your profile.</p><p>Work in this tab. Save a text copy before closing.</p><form><fieldset id="header"><legend>Overview</legend></fieldset><div id="rows"></div><button type="button" id="add">Add another featured project</button></form><section><h2>Preview</h2><pre id="preview"></pre><button type="button" id="save">Save a text copy</button></section></main><script>const config = ["GitHub profile","Build a short introduction and a project entry for your profile.",["Display name","What I build","Who I build for"],"Featured project",["Project name","Problem","What I built","Evidence or link","Skills practiced"]];
+const form = document.querySelector("form");
+const rows = document.querySelector("#rows");
+const preview = document.querySelector("#preview");
+function fields(container, labels, values = []) {
+  labels.forEach((label, i) => {
+    const wrapper = document.createElement("label");
+    wrapper.textContent = label;
+    const input = document.createElement(label === "Activity" ? "select" : "textarea");
+    if (label === "Activity") {
+      for (const activity of ["Check-in", "Volunteer signup"]) input.add(new Option(activity, activity));
+    } else input.rows = 2;
+    if (values[i]) input.value = values[i];
+    wrapper.append(input);
+    container.append(wrapper);
+  });
+}
+function addRow() {
+  const row = document.createElement("fieldset");
+  const legend = document.createElement("legend");
+  legend.textContent = config[3];
+  row.append(legend);
+  fields(row, config[4]);
+  const remove = document.createElement("button");
+  remove.type = "button";
+  remove.textContent = "Remove entry";
+  remove.onclick = () => { row.remove(); update(); };
+  row.append(remove);
+  rows.append(row);
+  return row;
+}
+function entries(group) {
+  return [...group.querySelectorAll("textarea, select")].map(input => input.value.trim());
+}
+function update() {
+  const header = entries(document.querySelector("#header"));
+  const lines = header.flatMap((v,i) => v ? [config[2][i] + ": " + v] : []);
+  const visits = new Map(), volunteers = new Map(), people = new Set();
+  for (const row of rows.children) {
+    const values = entries(row);
+    if (config[0] === "Event attendance") {
+      const [event, member, action] = values;
+      if (!event || !member) continue;
+      const key = JSON.stringify([event.toLowerCase(), member.toLowerCase()]);
+      const target = action === "Check-in" ? visits : volunteers;
+      if (target.has(key)) continue;
+      target.set(key, true);
+      if (action === "Check-in") people.add(member.toLowerCase());
+    }
+    if (values.some(Boolean)) lines.push("", ...values.flatMap((v,i) => v ? [config[4][i] + ": " + v] : []));
+  }
+  if (config[0] === "Event attendance") lines.push("", "Check-ins: "+visits.size+" · Distinct attendees: "+people.size+" · Volunteer signups: "+volunteers.size);
+  preview.textContent = lines.join("\n").trim() || "Your completed template will appear here.";
+}
+fields(document.querySelector("#header"), config[2]);
+addRow();
+document.querySelector("#add").onclick = () => { const row = addRow(); row.querySelector("textarea").focus(); update(); };
+form.oninput = update;
+document.querySelector("#save").onclick = () => {
+  const a = document.createElement("a");
+  const blob = new Blob([config[0]+"\n\n"+preview.textContent+"\n"], {type:"text/plain;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  a.href=url; a.download=config[0].toLowerCase().replaceAll(" ","-")+".txt"; a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+};
+update();</script></body></html>
